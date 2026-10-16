@@ -48,3 +48,68 @@ a.gradient-btn{display:block;text-align:center}
 .goal-item.done .goal-check{background:#5b59dc;border-color:#5b59dc}
 .journal-form select{width:100%;padding:12px;border:1px solid #d9dce3;border-radius:12px;background:#fff}
 .center{text-align:center}
+
+/* ================= Full-width responsive + desktop layout ================= */
+body{background:#eef2fb}
+
+/* the old fixed, centered phone frame becomes a full-width page */
+.phone{width:100%;max-width:none;margin:0;box-shadow:none}
+
+.app-shell{display:flex;min-height:100vh;background:#fff}
+.app-main{flex:1;min-width:0;display:flex;flex-direction:column;padding:22px 18px 28px;background:#fff}
+.page-content{width:100%;flex:1 1 auto;min-width:0}
+
+/* sidebar is desktop-only */
+.sidebar{display:none}
+
+/* auth screens have no sidebar and keep a narrow, centered card */
+.login-page .page-content{max-width:440px;margin:0 auto}
+
+@media (min-width:1024px){
+  body{background:#f5f7fc}
+  .app-main{padding:34px 44px 56px}
+  .page-content{max-width:1100px;margin:0 auto}
+  .bottom-nav{display:none}
+
+  .sidebar{display:flex;flex-direction:column;width:250px;flex:none;align-self:flex-start;position:sticky;top:0;height:100vh;padding:22px 14px;background:#fff;border-right:1px solid #e9edf6}
+  .sidebar-brand{display:flex;align-items:center;gap:10px;padding:6px 10px 20px;font-size:18px;font-weight:800;color:#2b3d76}
+  .sidebar-logo{width:36px;height:36px;flex:none;border-radius:12px;display:grid;place-items:center;color:#fff;background:linear-gradient(120deg,#268cf1,#7549e9);font-size:18px}
+  .sidebar-nav{display:flex;flex-direction:column;gap:4px}
+  .sidebar-item{display:flex;align-items:center;gap:12px;padding:11px 12px;border-radius:12px;font-size:14px;font-weight:600;color:#5a6485}
+  .sidebar-item:hover{background:#f4f6fd;color:#2b3d76}
+  .sidebar-item.active{background:#eef1ff;color:#5b54d5}
+  .sidebar-foot{margin-top:auto;padding-top:14px;border-top:1px solid #eef1f7}
+  .sidebar-foot .logout-btn{margin-left:0;width:100%;justify-content:center}
+
+  /* roomier typography so the mobile-tuned sizes read well on desktop */
+  .topbar{height:48px;grid-template-columns:40px 1fr 40px}
+  .topbar h1{font-size:18px}
+  .muted{font-size:14px}
+  .gradient-btn{font-size:15px;padding:14px 20px}
+  .section-title h2{font-size:18px}
+  .section-title span{font-size:12px}
+  .hero-card{min-height:170px;padding:24px}
+  .hero-card h2{font-size:24px}
+  .hero-card p{font-size:13px}
+  .hero-card button{font-size:12px;padding:9px 15px}
+  .hero-orb{font-size:110px}
+  .quick-grid{grid-template-columns:repeat(6,1fr)}
+  .mood-grid{grid-template-columns:repeat(6,1fr)}
+  .mood-card{font-size:12px;padding:16px 8px}
+  .mood-emoji{font-size:30px}
+  .entry b{font-size:14px}
+  .entry small{font-size:12px}
+  .article h2{font-size:22px}
+  .article p{font-size:15px;line-height:1.75}
+  .article h3{font-size:16px}
+  .symptom{font-size:14px}
+  .question-card h3{font-size:16px}
+  .answer{font-size:15px}
+  .question-number{font-size:12px}
+  .care-item b,.support-item b{font-size:14px}
+  .care-item small,.support-item small{font-size:12px}
+  .subheading{font-size:16px}
+  .field{height:52px}
+  .field input{font-size:15px}
+  .login-inner h1{font-size:26px}
+}

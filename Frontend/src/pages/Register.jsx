@@ -74,7 +74,7 @@ export default function Register() {
   );
 
   return (
-    <Page className="login-page">
+    <Page sidebar={false} className="login-page">
       <form className="login-inner register-form" onSubmit={submit} noValidate>
         <h1>Create Account</h1>
         <p className="muted">Start your MindEase journey</p>

@@ -25,7 +25,7 @@ export default function Login() {
     }
   }
   return (
-    <Page className="login-page">
+    <Page sidebar={false} className="login-page">
       <form className="login-inner" onSubmit={submit}>
         <h1>Welcome Back</h1>
         <p className="muted">Log in to continue your journey</p>
