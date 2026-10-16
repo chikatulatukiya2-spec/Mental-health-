@@ -43,8 +43,12 @@ class MoodTest extends TestCase
             'user_id' => $user->id,
             'mood' => 'Calm',
             'note' => 'quiet day',
-            'recorded_at' => now()->toDateString(),
         ]);
+
+        $this->assertSame(
+            now()->toDateString(),
+            MoodEntry::where('user_id', $user->id)->firstOrFail()->recorded_at->toDateString()
+        );
     }
 
     public function test_index_only_returns_the_users_own_moods(): void

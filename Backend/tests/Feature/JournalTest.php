@@ -36,8 +36,12 @@ class JournalTest extends TestCase
         $this->assertDatabaseHas('journal_entries', [
             'user_id' => $user->id,
             'title' => 'A good day',
-            'entry_date' => now()->toDateString(),
         ]);
+
+        $this->assertSame(
+            now()->toDateString(),
+            JournalEntry::where('user_id', $user->id)->firstOrFail()->entry_date->toDateString()
+        );
     }
 
     public function test_index_is_scoped_to_the_user(): void
