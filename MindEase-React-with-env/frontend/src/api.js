@@ -30,11 +30,9 @@ export function isAuthenticated() {
 
 async function request(path, options = {}) {
   const headers = {
-  Accept: "application/json",
-  "Access-Control-Allow-Origin": "http://localhost:5173",
-  "Access-Control-Allow-Headers": "Content-Type, Accept",
-  ...(options.headers || {}),
-};
+    Accept: "application/json",
+    ...(options.headers || {}),
+  };
   if (options.body && !headers["Content-Type"])
     headers["Content-Type"] = "application/json";
   const token = getToken();
