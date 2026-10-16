@@ -15,7 +15,7 @@ resources.
 | Path | What it is |
 | --- | --- |
 | `Backend/` | Laravel 13 API (PHP 8.3+) with token auth via Laravel Sanctum. |
-| `MindEase-React-with-env/frontend/` | The active React + Vite client. Talks to `Backend/`. |
+| `Frontend/` | The active React + Vite client. Talks to `Backend/`. |
 | `legacy/` | Archived early prototype, kept for reference only. Not wired to the API. |
 
 ## Features
@@ -85,7 +85,7 @@ The API is now served at **http://127.0.0.1:8000/api**.
 ### 2. Frontend client
 
 ```bash
-cd MindEase-React-with-env/frontend
+cd Frontend
 npm install
 cp .env.example .env   # skip if .env already exists
 npm run dev
@@ -118,7 +118,7 @@ Key backend variables (see `Backend/.env.example` for the full list):
 | `CORS_ALLOWED_ORIGINS` | Comma-separated browser origins allowed to call the API. |
 | `SESSION_DRIVER` | Session store (defaults to `database`). |
 
-Key frontend variables (see `MindEase-React-with-env/frontend/.env.example`):
+Key frontend variables (see `Frontend/.env.example`):
 
 | Variable | Purpose |
 | --- | --- |
