@@ -44,12 +44,40 @@ export function BottomNav() {
   );
 }
 
-export function Page({ children, nav=false, className="" }) {
+export function Sidebar() {
+  const location = useLocation();
   return (
-    <PhoneShell className={className}>
-      {children}
-      {nav && <BottomNav />}
-    </PhoneShell>
+    <aside className="sidebar">
+      <Link to="/home" className="sidebar-brand">
+        <span className="sidebar-logo">♡</span>
+        <span className="sidebar-name">MindEase</span>
+      </Link>
+      <nav className="sidebar-nav">
+        {navItems.map(([path, Icon, label]) => {
+          const active = location.pathname === path;
+          return (
+            <Link className={active ? "sidebar-item active" : "sidebar-item"} to={path} key={path}>
+              <Icon size={20}/><span>{label}</span>
+            </Link>
+          );
+        })}
+      </nav>
+      <div className="sidebar-foot">
+        <LogoutButton variant="full" />
+      </div>
+    </aside>
+  );
+}
+
+export function Page({ children, nav=false, sidebar=true, className="" }) {
+  return (
+    <div className={`app-shell ${sidebar ? "with-sidebar" : ""} ${className}`.trim()}>
+      {sidebar && <Sidebar />}
+      <main className="app-main">
+        <div className="page-content">{children}</div>
+        {nav && <BottomNav />}
+      </main>
+    </div>
   );
 }
 
