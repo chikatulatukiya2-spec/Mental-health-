@@ -108,6 +108,7 @@ export const api = {
   selfCare: () => request("/self-care"),
   support: () => request("/support"),
   aiHistory: () => request("/ai/history"),
+  aiClearHistory: () => request("/ai/history", { method: "DELETE" }),
   aiChat: (message) =>
     request("/ai/chat", { method: "POST", body: JSON.stringify({ message }) }),
 };
